@@ -4,6 +4,7 @@ import { Card, Button } from "react-bootstrap";
 class Board extends Component {
   state = {
     jobs: [],
+    company: "null",
   };
 
   componentDidMount = async () => {
@@ -25,8 +26,9 @@ class Board extends Component {
         <Card>
           {this.state.jobs.map((job) => (
             <>
+              {this.setState({ company: job.company_name })}
               <Card.Body className="space-between" key="">
-                {job.title}, <a href="/Company">{job.company_name}</a>
+                {job.title}, <a href={this.state.company}>{job.company_name}</a>
               </Card.Body>
               <div className="container col-6">
                 <p>Category: {job.category}</p>
