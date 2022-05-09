@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+#searchBar {
+  width: 25%;
+}
+
+#apply {
+  width: 10%;
+  margin-left: 50px;
+  margin: 20px;
+}
