@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Card, Button } from "react-bootstrap";
+import { withRouter } from "react-router-dom";
 
 class Board extends Component {
   state = {
@@ -26,9 +27,9 @@ class Board extends Component {
         <Card>
           {this.state.jobs.map((job) => (
             <>
-              {this.setState({ company: job.company_name })}
-              <Card.Body className="space-between" key="">
-                {job.title}, <a href={this.state.company}>{job.company_name}</a>
+              {/* {this.setState({ company: job.company_name })} */}
+              <Card.Body className="space-between" key={job._id}>
+                {job.title}, , <a href={job.company_name}>{job.company_name}</a>
               </Card.Body>
               <div className="container col-6">
                 <p>Category: {job.category}</p>
@@ -38,7 +39,7 @@ class Board extends Component {
                 id="apply"
                 as="input"
                 type="button"
-                value="Input"
+                value="add to favorite"
                 size="sm"
               />
             </>
@@ -49,4 +50,4 @@ class Board extends Component {
   }
 }
 
-export default Board;
+export default withRouter(Board);
