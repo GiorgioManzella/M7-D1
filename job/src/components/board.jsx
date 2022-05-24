@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Card, Button } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
+import { addToFavourite } from "../slice/favourites/favoritesSlice.js";
 
 class Board extends Component {
   state = {
@@ -41,6 +42,7 @@ class Board extends Component {
                 type="button"
                 value="add to favorite"
                 size="sm"
+                onClick={() => this.props.addToFavourite(job)}
               />
             </>
           ))}

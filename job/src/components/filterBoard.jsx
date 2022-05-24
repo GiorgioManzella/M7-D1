@@ -1,7 +1,6 @@
 import { Component } from "react";
 import { Card, Button } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
 class FilterBoard extends Component {
   state = {
